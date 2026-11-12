@@ -44,10 +44,8 @@ test-timings.json
 # Misc
 .DS_Store
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
 # Logs
 *.log
@@ -72,3 +70,29 @@ yarn-error.log*
 
 # Python
 venv
+
+# Marketplace Learning to Rank generated local artifacts
+**/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+artifacts/models/*
+artifacts/embeddings/*
+data/generated/*
+!data/generated/.gitkeep
+.pnpm-store/
+artifacts/data/*
+artifacts/features/*
+artifacts/experiments/*
+/PLAN.md
+
+# Credentials and local cloud configuration
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.gcloud/
+credentials.json
