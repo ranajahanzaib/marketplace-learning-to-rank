@@ -1,0 +1,7 @@
+# Evaluation
+
+Evaluation uses held-out query groups and complete eligible-universe synthetic labels. Rules, dense semantic, and LambdaMART rank the same deterministic candidate union. If the dense model is missing, the semantic strategy is reported unavailable; lexical scores are never relabeled as dense evidence.
+
+For relevance labels `y_i`, DCG@K is `Σ(i=1..K) (2^y_i - 1) / log2(i+1)` and NDCG divides by ideal DCG. Binary relevance is grade ≥ 3. Recall@K divides relevant providers in the top K by all relevant eligible providers; Precision@K uses K as its denominator, including when fewer than K results exist; MRR@10 uses the first grade-3-or-higher result. Queries with no relevant results contribute zero and remain in the aggregate. The report includes Recall/Precision/NDCG@5, @10, @20, MRR@10, query-level metrics, zero-result rate, candidate recall by retriever, candidate coverage, paired query bootstrap intervals, segment slices, review-free-provider analysis, unseen-provider analysis, and query regressions/improvements.
+
+Bootstrap intervals resample queries with replacement using fixed seeds. Paired differences keep the same query order. They describe this generated distribution; they do not establish independent user traffic or real-world lift. `marketplace_learning_to_rank benchmark` reports measured in-process initialization and warm ranking timing separately; browser/network time is excluded.

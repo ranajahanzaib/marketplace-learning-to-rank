@@ -1,0 +1,3 @@
+# Cold start
+
+Generated profiles include complete provider records with zero reviews, projects, and response history. Serving uses explicit missingness flags and a neutral rating prior, and the evaluator reports performance for relevant no-review providers. Separately, a deterministic provider-ID holdout is excluded from training and validation to measure ranking for providers not seen during model fit. New customer requests work from explicit structured query requirements; the system uses no customer history. Rare-specialty slices use the generated query frequency distribution and may have wide intervals.
