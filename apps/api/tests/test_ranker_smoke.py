@@ -2,13 +2,11 @@ import json
 from pathlib import Path
 import lightgbm as lgb
 from fastapi.testclient import TestClient
-from marketplace_learning_to_rank.core.models import MarketplaceQuery,Provider
 from marketplace_learning_to_rank.data.generate import generate
 from marketplace_learning_to_rank.ranking.service import RankingService
 from marketplace_learning_to_rank.retrieval.search import SearchEngine
 from marketplace_learning_to_rank.retrieval.smoke_encoder import SmokeEncoder
 from marketplace_learning_to_rank.training.train import train
-from marketplace_learning_to_rank.evaluation.run import evaluate
 
 def test_grouped_training_save_reload_and_unseen_provider(tmp_path:Path,monkeypatch):
     data=tmp_path/'data';providers,queries,_,_=generate(4,80,80,output=data)

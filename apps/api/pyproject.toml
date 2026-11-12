@@ -12,6 +12,7 @@ semantic = ["sentence-transformers>=3,<6", "torch>=2"]
 test = ["pytest>=8", "httpx>=0.27", "ruff>=0.8", "mypy>=1.13"]
 
 [project.scripts]
+marketplace_learning_to_rank = "marketplace_learning_to_rank.cli:app"
 marketplace-learning-to-rank = "marketplace_learning_to_rank.cli:app"
 
 [project.urls]
@@ -31,9 +32,11 @@ packages = ["src/marketplace_learning_to_rank"]
 pythonpath = ["src"]
 testpaths = ["tests"]
 
+[tool.ruff.lint]
+select = ["F"]
+
 [tool.ruff]
 line-length = 100
-select = ["F"]
 target-version = "py312"
 
 [tool.mypy]

@@ -9,7 +9,7 @@ import lightgbm as lgb
 from marketplace_learning_to_rank.core.models import MarketplaceQuery, Provider
 from marketplace_learning_to_rank.ranking.features import FEATURE_NAMES, FEATURE_VERSION, features, vector
 from marketplace_learning_to_rank.ranking.service import RankingService
-from marketplace_learning_to_rank.retrieval.search import MODEL_ID,MODEL_REVISION,SearchEngine
+from marketplace_learning_to_rank.retrieval.search import MODEL_ID,SearchEngine
 from marketplace_learning_to_rank.experiments.harness import Event,ExperimentConfig,ExperimentStore,report as experiment_report,simulate as simulate_experiment
 
 ROOT=Path(__file__).resolve().parents[5]; DATA=ROOT/'data/generated'; ARTIFACTS=ROOT/'artifacts'

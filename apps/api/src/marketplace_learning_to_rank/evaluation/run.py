@@ -6,7 +6,7 @@ from marketplace_learning_to_rank.core.models import MarketplaceQuery,Provider
 from marketplace_learning_to_rank.evaluation.metrics import bootstrap_mean,ndcg,paired_bootstrap_difference,precision_at_k,recall_at_k,mrr_at_k
 from marketplace_learning_to_rank.ranking.features import FEATURE_NAMES,FEATURE_VERSION
 from marketplace_learning_to_rank.ranking.service import RankingService
-from marketplace_learning_to_rank.retrieval.search import MODEL_ID,MODEL_REVISION,SearchEngine
+from marketplace_learning_to_rank.retrieval.search import MODEL_ID,SearchEngine
 
 THRESHOLD=3;KS=(5,10,20)
 def evaluate(data_dir:Path,model_path:Path,output_dir:Path|None=None,engine:SearchEngine|None=None):
