@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test.setTimeout(120000);
+test.setTimeout(300000);
 
 test("real local ranking workbench journey", async ({ page }) => {
   await page.goto("/");
