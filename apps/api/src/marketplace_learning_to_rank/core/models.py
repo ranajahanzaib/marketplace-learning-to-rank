@@ -101,6 +101,10 @@ class CandidateFeatures(BaseModel):
     has_project_history: float
     response_history_missing: float
 
+    @property
+    def reliability(self) -> float:
+        return self.adjusted_rating / 5.0
+
 class SearchResult(BaseModel):
     provider: Provider
     score: float
