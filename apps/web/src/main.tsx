@@ -612,7 +612,7 @@ function SearchForm(p: any) {
           />{" "}
           Must be available now
         </label>
-        <button onClick={p.runSearch}>
+        <button onClick={() => p.runSearch()}>
           <Search size={16} /> Search providers
         </button>
       </div>
@@ -649,7 +649,7 @@ function Results(p: {
         </div>
         <h3>Start with a project brief</h3>
         <p>Search calls the real local API and ranking pipeline.</p>
-        <button onClick={p.runSearch}>
+        <button onClick={() => p.runSearch()}>
           Run example search <ArrowUpRight size={15} />
         </button>
       </div>
