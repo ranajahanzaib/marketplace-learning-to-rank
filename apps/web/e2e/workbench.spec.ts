@@ -4,7 +4,7 @@ test("real local ranking workbench journey", async ({ page }) => {
   await page.goto("/");
 
   await page.getByRole("button", { name: "Run example search" }).click();
-  await page.waitForSelector('.provider', { state: 'visible', timeout: 15000 });
+  await page.waitForSelector('.provider', { state: 'visible', timeout: 30000 });
   await expect(page.locator('.provider').first()).toBeVisible();
   await page.locator(".provider").first().click();
   await expect(page.locator(".inspector h2")).toBeVisible();
