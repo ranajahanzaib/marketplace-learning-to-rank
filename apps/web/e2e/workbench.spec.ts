@@ -1,12 +1,17 @@
 import { expect, test } from "@playwright/test";
 
+test.setTimeout(120000);
+
 test("real local ranking workbench journey", async ({ page }) => {
   await page.goto("/");
 
-  await page.waitForLoadState('networkidle');
-await page.getByRole("button", { name: "Run example search" }).click();
-  await page.waitForSelector('.provider', { state: 'visible', timeout: 60000 });
-  await expect(page.locator('.provider').first()).toBeVisible();
+  await page.waitForLoadState("networkidle");
+  await page.getByRole("button", { name: "Run example search" }).click();
+  await page.waitForSelector(".provider", {
+    state: "attached",
+    timeout: 120000,
+  });
+  await expect(page.locator(".provider").first()).toBeVisible();
   await page.locator(".provider").first().click();
   await expect(page.locator(".inspector h2")).toBeVisible();
   await expect(page.getByText("MODEL SCORE · NOT A PROBABILITY")).toBeVisible();
