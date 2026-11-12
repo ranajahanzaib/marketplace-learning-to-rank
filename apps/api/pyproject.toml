@@ -1,0 +1,43 @@
+[project]
+name = "marketplace-learning-to-rank"
+version = "0.1.0"
+description = "A local-first learning-to-rank laboratory for service marketplaces"
+authors = [{ name = "Rana Jahanzaib" }]
+license = "MIT"
+requires-python = ">=3.12,<3.15"
+dependencies = ["fastapi>=0.115,<1", "uvicorn[standard]>=0.30,<1", "pydantic>=2.8,<3", "numpy>=2.0", "scikit-learn>=1.5", "lightgbm>=4.5", "typer>=0.12", "joblib>=1.4"]
+
+[project.optional-dependencies]
+semantic = ["sentence-transformers>=3,<6", "torch>=2"]
+test = ["pytest>=8", "httpx>=0.27", "ruff>=0.8", "mypy>=1.13"]
+
+[project.scripts]
+marketplace-learning-to-rank = "marketplace_learning_to_rank.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/ranajahanzaib/marketplace-learning-to-rank"
+Repository = "https://github.com/ranajahanzaib/marketplace-learning-to-rank"
+Issues = "https://github.com/ranajahanzaib/marketplace-learning-to-rank/issues"
+Changelog = "https://github.com/ranajahanzaib/marketplace-learning-to-rank/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/marketplace_learning_to_rank"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+select = ["F"]
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+warn_unused_ignores = true
+no_implicit_optional = true
