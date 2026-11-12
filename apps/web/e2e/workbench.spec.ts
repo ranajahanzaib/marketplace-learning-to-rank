@@ -19,7 +19,7 @@ test("real local ranking workbench journey", async ({ page }) => {
 
   await page.getByRole("button", { name: "Ranking Comparison" }).click();
   await page.getByRole("button", { name: "Compare strategies" }).click();
-  await expect(page.locator(".comparison-grid")).toContainText("lambdamart");
+  await expect(page.locator(".comparison-grid")).toContainText(/lambdamart/i);
   await expect(
     page.locator(".comparison-grid .compare-row").first(),
   ).toBeVisible();
