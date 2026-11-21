@@ -6,6 +6,19 @@ Marketplace Learning to Rank is a local learning-to-rank lab for professional se
 
 All provider records, query requests, relevance labels, and experiment traffic are synthetic. The project does not claim actual booking lift.
 
+![Search Playground showing a real local search and ranked synthetic providers](docs/screenshots/overview.png)
+
+_The running workbench with a local search over synthetic provider profiles._
+
+## Workbench screenshots
+
+The screenshots below were captured from the running React app and FastAPI service using a seeded 80-provider, 80-query smoke dataset. The semantic model is optional and was unavailable in this capture; the comparison shows rules and the CI-only hashing fixture. Evaluation values are synthetic software smoke evidence, not model quality or marketplace evidence.
+
+| Workflow                                                                            | Screenshot                                                                                                     |
+| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Compare strategies on the same retrieved candidate pool                             | ![Ranking comparison showing rank movements for rules and LambdaMART](docs/screenshots/ranking-comparison.png) |
+| Inspect held-out synthetic evaluation, confidence intervals, and retrieval coverage | ![Evaluation lab with held-out synthetic metrics](docs/screenshots/evaluation.png)                             |
+
 ## Capabilities
 
 - Seeded provider and query generator, complete eligible-universe labels, deterministic query splits grouped by structured category/specialty/skill intent, and an unseen-provider holdout.
@@ -37,6 +50,8 @@ cd apps/web && pnpm dev
 ```
 
 Open http://localhost:5173. FastAPI’s OpenAPI page is at http://localhost:8000/docs.
+
+The web app defaults to `http://localhost:8000/api/v1`. To use another local API address, set `VITE_API_BASE_URL` when starting Vite, for example `VITE_API_BASE_URL=http://localhost:8765/api/v1 pnpm dev`.
 
 ## Reproducible pipeline
 
