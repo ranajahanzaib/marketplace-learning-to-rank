@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use Marketplace Learning to Rank in research or teaching, please cite this software."
+title: "Marketplace Learning to Rank"
+version: 0.1.0
+authors:
+  - family-names: Rana
+    given-names: Jahanzaib
+    orcid: "https://orcid.org/0009-0006-7085-0440"
+repository-code: "https://github.com/ranajahanzaib/marketplace-learning-to-rank"
+license: MIT
+abstract: "Marketplace Learning to Rank is a local learning-to-rank lab for professional service marketplaces. It applies marketplace eligibility rules before retrieval, combines lexical and local dense retrieval, and compares a transparent rules baseline, a semantic baseline, and LightGBM LambdaMART over a shared candidate pool."
+keywords:
+  - learning-to-rank
+  - lambdamart
+  - information-retrieval
+  - marketplace
+  - search
